@@ -625,7 +625,7 @@ let images = [];
 let selectedCat = 'Luxury Bag';
 const FREE_LIMIT = 3;
 const API_TIMEOUT_MS = 20000;
-const GEMINI_API_KEY = 'AIzaSyB18dSE-qrdMNK-xqRiTZLXwXkW813WeKE';
+const GEMINI_API_KEY = '';
 
 // localStorage: track daily usage (resets each day automatically)
 function getTodayKey() { return 'fc_used_' + new Date().toISOString().slice(0,10); }
@@ -790,7 +790,7 @@ Use "suspicious" if image quality is poor or the item is unclear. Be observation
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT_MS);
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${GEMINI_API_KEY}`;
+    const geminiUrl = `https://fakecheck-proxy.dgim17672.workers.dev/?model=gemini-3.1-flash-lite`;
     const response = await fetch(geminiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
