@@ -122,13 +122,13 @@
   }
 
   /* PREVIEW */
-  .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .preview-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1; background: var(--surface2); }
-  .preview-item img { width: 100%; height: 100%; object-fit: cover; }
+  .preview-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .preview-item { position: relative; border-radius: 12px; overflow: hidden; background: var(--surface2); }
+  .preview-item img { width: 100%; max-height: 320px; object-fit: cover; display: block; }
   .preview-remove {
-    position: absolute; top: 5px; right: 5px; background: rgba(0,0,0,0.6);
-    border: none; color: #fff; border-radius: 50%; width: 22px; height: 22px;
-    cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6);
+    border: none; color: #fff; border-radius: 50%; width: 28px; height: 28px;
+    cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center;
   }
 
   /* CATEGORY */
@@ -324,7 +324,7 @@
       <div class="upload-title" id="uploadTitle">Take or upload a photo</div>
       <div class="upload-sub" id="uploadSub">Snap the logo, label, stitching, or serial number for best results</div>
       <button class="upload-btn" id="uploadBtnLabel" onclick="event.stopPropagation();document.getElementById('fileInput').click()">Choose Photo</button>
-      <input type="file" id="fileInput" accept="image/*" onchange="handleFiles(this.files)">
+      <input type="file" id="fileInput" onchange="handleFiles(this.files)">
       <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:2px;" id="imgPrivacyNote">📷 Images are used for AI analysis only and are not stored</div>
     </div>
     <div class="size-warning" id="sizeWarning">
